@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarya - Personal Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+      </head>
+  <body  style="background-color:rgb(13, 12, 12);">
+    <header>
+      <nav>
+      <div class="left"> <span>A</span>arya.</div>
+      <div class="right"></div>
+      <ul>
+     <li> <a href="./Home.html">Home</a></li>
+    <li> <a href="./About_me.html">About</a></li>
+   <li> <a href="/Contact_me.html">Contact</a></li>
+   <li> <a href="/index.html">Discussion</a></li>
+  
+          
+      </ul>
+      </nav>
+  </header>    
+    <h1><strong>Discussion Section</strong></h1>
+	<form>
+		<label style="color: aliceblue ;" for="name">Name:</label>
+		<input type="text" id="name" name="name"><br>
+
+		<label style="color: aliceblue ;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" for="comment">Comment:</label><br>
+		<textarea id="comment" name="comment" rows="5" cols="40"></textarea><br>
+
+		<input style="font-family: cursive;" type="button" value="Submit" onclick="addComment()">
+	</form>
+
+	<div  id="comments"></div>
+
+	<script >
+		function addComment() {
+			var name = document.getElementById("name").value;
+			var comment = document.getElementById("comment").value;
+			var  date = new Date().toLocaleString();
+			var html = '<p><strong>' + name + '</strong> wrote on ' + date + ':<br>' + comment + '</p>';
+			document.getElementById("comments").innerHTML += html;
+			document.getElementById("name").value = "";
+			document.getElementById("comment").value = "";
+		}
+	</script>
+   
+  </body>
+</html>
